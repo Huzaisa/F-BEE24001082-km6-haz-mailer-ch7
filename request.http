@@ -1,0 +1,41 @@
+# Register a new user
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+    "email": "shirohagi5@gmail.com",
+    "password": "password123"
+}
+
+###
+
+# Login with registered user
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "email": "shirohagi5@gmail.com",
+    "password": "password123"
+}
+
+###
+
+# Request password reset link
+POST http://localhost:3000/auth/forgot-password
+Content-Type: application/json
+
+{
+    "email": "shirohagi5@gmail.com"
+}
+
+###
+
+# Reset password using the token from the password reset email
+# Replace "reset_token" with the actual token received in the email
+POST http://localhost:3000/auth/reset-password
+Content-Type: application/json
+
+{
+    "token": "reset_token",
+    "newPassword": "newpassword123"
+}
